@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import { setSearchField, requestProfiles } from '../redux/action';
 
-// import CardList from '../components/CardList';
-// import SearchBox from '../components/SearchBox';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
 
 import './App.css';
 // import Detailed from '../components/Detailed';
@@ -16,7 +16,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+  onSearchChange: (event) => dispatch(setSearchField(event.target.value),console.log(event)),
   onRequestProfiles: () => dispatch(requestProfiles()),
 });
 
@@ -27,8 +27,10 @@ const App = ({
   isPending,
   onRequestProfiles,
 }) => {
-  const filteredRecipes = profiles.filter((recipe) =>
-    recipe.URL.toLowerCase().includes(searchField.toLowerCase())
+  const filteredProfiles = profiles.filter(
+    (recipe) =>
+      recipe.PaymentMethod.toLowerCase().includes(searchField.toLowerCase()) ||
+      recipe.Gender.toLowerCase().includes(searchField.toLowerCase())
   );
 
   useEffect(() => {
@@ -36,10 +38,23 @@ const App = ({
   }, []);
 
   return (
-    <div className="tc">
-      <h1 className="f1">Munch It</h1>
-      <h1>hello</h1>
-    </div>
+    
+      <div className="tc">
+        <h1 className="f1">Munch It</h1>
+        
+          <div>
+            <SearchBox searchChange={onSearchChange} />
+            {isPending ? (
+              <h1>Loading</h1>
+            ) : (
+              <CardList profiles={filteredProfiles} />
+            )}
+          </div>
+        
+       
+       
+      </div>
+  
   );
 };
 

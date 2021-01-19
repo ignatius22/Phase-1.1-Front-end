@@ -15,9 +15,12 @@ export const setSearchField = (text) => ({
 export const requestProfiles = () => (dispatch) => {
   dispatch({ type: REQUEST_PROFILES_PENDING });
   apiCall('https://api.enye.tech/v1/challenge/records')
-    .then((data) =>
-      dispatch({ type: REQUEST_PROFILES_SUCCESS, payload: data.hits })
-    )
+    .then((data) => {
+      dispatch(
+        { type: REQUEST_PROFILES_SUCCESS, payload: data.records.profiles },
+        console.log(data.records)
+      );
+    })
     .catch((error) =>
       dispatch({ type: REQUEST_PROFILES_FAILED, payload: error })
     );

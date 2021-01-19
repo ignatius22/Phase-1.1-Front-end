@@ -9,7 +9,7 @@ const initialStateSearch = {
   searchField: '',
 };
 
-export const setSearchProfiles = (state = initialStateSearch, action = {}) => {
+export const searchProfile = (state = initialStateSearch, action = {}) => {
   switch (action.type) {
     case CHANGE_SEARCHFIELD:
       return { ...state, searchField: action.payload };
@@ -18,12 +18,12 @@ export const setSearchProfiles = (state = initialStateSearch, action = {}) => {
   }
 };
 
-const initialStateProfiles = {
+const initialStateProfile = {
   profiles: [],
   isPending: true,
 };
 
-export const requestProfiles = (state = initialStateProfiles, action = {}) => {
+export const requestProfiles = (state = initialStateProfile, action = {}) => {
   switch (action.type) {
     case REQUEST_PROFILES_PENDING:
       return { ...state, isPending: true };

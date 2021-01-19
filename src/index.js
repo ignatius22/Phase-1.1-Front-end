@@ -8,11 +8,11 @@ import 'tachyons';
 
 import App from './containers/App';
 
-import { requestRecipes, searchRecipes } from './redux/reducer';
+import { requestProfiles, setSearchProfiles } from './redux/reducer';
 
 import './index.css';
 
-const rootReducers = combineReducers({ requestRecipes, searchRecipes });
+const rootReducers = combineReducers({ requestProfiles, setSearchProfiles });
 
 const store = createStore(rootReducers, applyMiddleware(thunkMiddleware));
 

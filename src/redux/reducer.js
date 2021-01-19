@@ -9,7 +9,7 @@ const initialStateSearch = {
   searchField: '',
 };
 
-export const searchRecipes = (state = initialStateSearch, action = {}) => {
+export const setSearchProfiles = (state = initialStateSearch, action = {}) => {
   switch (action.type) {
     case CHANGE_SEARCHFIELD:
       return { ...state, searchField: action.payload };

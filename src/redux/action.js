@@ -14,9 +14,7 @@ export const setSearchField = (text) => ({
 
 export const requestProfiles = () => (dispatch) => {
   dispatch({ type: REQUEST_PROFILES_PENDING });
-  apiCall(
-    'https://api.edamam.com/search?q=chicken&app_id=4e80d906&app_key=90d9ed76fe22d477f1c7c3676ed9f686&from=0&to=20'
-  )
+  apiCall('https://api.enye.tech/v1/challenge/records')
     .then((data) =>
       dispatch({ type: REQUEST_PROFILES_SUCCESS, payload: data.hits })
     )

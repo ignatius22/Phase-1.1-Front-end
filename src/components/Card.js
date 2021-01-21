@@ -18,8 +18,13 @@ const Card = ({
   LastLogin,
   PaymentMethod,
 }) => (
-  <div class="pa3 pa5-ns center mw5 mw6-ns br3 hidden ba b--black-10 mv4 shadow">
-    <h2 class="f3 fw5 mb-4 text-monospace">
+  <div class="pa3 pa5-ns center mw5 mw6-ns br3 hidden ba b--black-10 mv4 shadow bg-warning">
+    <h2
+      class="f3 fw5 mb-4 text-monospace"
+      data-toggle="tooltip"
+      data-placement="top"
+      title={FirstName}
+    >
       {FirstName} {LastName}
     </h2>
     <dl class="f5 lh-title mv2">

@@ -4,7 +4,7 @@ import React from 'react';
 import Card from './Card';
 
 const CardList = ({ profiles }) => (
-  <div data-testid="recipes" className="w-80 center" >
+  <div data-testid="recipes" className="w-80 center">
     {profiles.map((profile, i) => (
       <Card
         FirstName={profile.FirstName}

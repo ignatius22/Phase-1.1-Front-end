@@ -7,8 +7,8 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 
 import './App.css';
-import { Pagination } from '../components/Pagination';
-// import Detailed from '../components/Detailed';
+import Pagination  from '../components/Pagination';
+
 
 const mapStateToProps = (state) => ({
   searchField: state.searchProfile.searchField,
@@ -28,21 +28,22 @@ const App = ({
   isPending,
   onRequestProfiles,
 }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage] = useState(20);
 
-  const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage, setPostPerPage] = useState(20);
-
-  const indexOfLastPost = currentPage * postPerPage
+  const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
-  
 
+  const paginate = (pageNumer) => setCurrentPage(pageNumer);
 
-  const filteredProfiles = profiles.filter(
-    (recipe) =>
-      recipe.PaymentMethod.toLowerCase().includes(searchField.toLowerCase()) ||
-      recipe.Gender.toLowerCase().includes(searchField.toLowerCase()),
-      
-  ).slice(indexOfFirstPost,indexOfLastPost)
+  const filteredProfiles = profiles
+    .filter(
+      (recipe) =>
+        recipe.PaymentMethod.toLowerCase().includes(
+          searchField.toLowerCase()
+        ) || recipe.Gender.toLowerCase().includes(searchField.toLowerCase())
+    )
+    .slice(indexOfFirstPost, indexOfLastPost);
 
 
 
@@ -50,22 +51,32 @@ const App = ({
     onRequestProfiles();
   }, []);
 
-
   return (
     <div className="tc">
-      <h1 className="f1">Munch It</h1>
+      <h1 className="display-4 text-warning font-weight-bold">Users Data</h1>
 
       <div>
         <SearchBox searchChange={onSearchChange} />
+
         {isPending ? (
-          <h1>Loading</h1>
+          <div class="spinner-border m-5" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
         ) : (
-            <>
-             <CardList profiles={filteredProfiles} />
-              <Pagination postPerPage={postPerPage} totalPost={profiles.length} />
-            </>
+          <>
+            <Pagination
+              postPerPage={postPerPage}
+              totalPost={profiles.length}
+              paginate={paginate}
+            />
+            <CardList profiles={filteredProfiles} />
+            <Pagination
+              postPerPage={postPerPage}
+              totalPost={profiles.length}
+              paginate={paginate}
+            />
+          </>
         )}
-        
       </div>
     </div>
   );

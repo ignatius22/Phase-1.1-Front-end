@@ -1,26 +1,32 @@
 import React from 'react'
 
-export const Pagination = ({totalPost,postPerPage}) => {
+
+
+const Pagination = ({ totalPost, postPerPage,paginate }) => {
 	const pageNumbers = []
 
 	for (let i = 1; i <= Math.ceil(totalPost / postPerPage); i++){
 		pageNumbers.push(i)
 	}
 	return (
-    <div>
-      <nav aria-label="Page navigation example">
-				<ul class="pagination">
-					{pageNumbers.map(number => {
-						    <li class="page-item" key={number}>
-                  <a class="page-link" href="!#">
-                    {number}
-                  </a>
-                </li>;
-					})}
-      
-          
-        </ul>
-      </nav>
-    </div>
+    <nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				{
+					pageNumbers.map((number) => {
+						return (
+              <li class="page-item">
+                <a onClick={()=> paginate(number)} class="page-link" href="!#">
+                  {number}
+                </a>
+              </li>
+            );
+						
+					})
+				}
+        
+      </ul>
+    </nav>
   );
 }
+
+export default Pagination;

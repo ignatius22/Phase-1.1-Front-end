@@ -4,7 +4,7 @@ import React from 'react';
 import Card from './Card';
 
 const CardList = ({ profiles }) => (
-  <div data-testid="recipes" className="mw9 center ph3-ns w-90 ">
+  <div data-testid="recipes" className="w-80 center" >
     {profiles.map((profile, i) => (
       <Card
         FirstName={profile.FirstName}
@@ -21,6 +21,7 @@ const CardList = ({ profiles }) => (
         UserName={profile.UserName}
         LastLogin={profile.LastLogin}
         PaymentMethod={profile.PaymentMethod}
+        key={i}
       />
     ))}
   </div>

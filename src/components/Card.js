@@ -18,62 +18,64 @@ const Card = ({
   LastLogin,
   PaymentMethod,
 }) => (
-  <div class="pa3 pa5-ns mw6 fl w-100 w-25-ns pa2 ml9 shadow-3 center  br3 pa3 pa2-ns mv3 ba b--black-10 bg-gold">
-    <h2 class="f3 fw5">Profile</h2>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">FirstName:</dt>
-      <dd class="dib ml0 gray">{FirstName}</dd>
+  <div class="pa3 pa5-ns center mw5 mw6-ns br3 hidden ba b--black-10 mv4 shadow">
+    <h2 class="f3 fw5 mb-4 text-monospace">
+      {FirstName} {LastName}
+    </h2>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">FirstName:</dt>
+      <dd class="dib ml gray roboto">{FirstName}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">LastName:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">LastName:</dt>
       <dd class="dib ml0 gray">{LastName}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">UserName:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">UserName:</dt>
       <dd class="dib ml0 gray">{UserName}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">LastLogin:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">LastLogin:</dt>
       <dd class="dib ml0 gray">{LastLogin}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">Gender:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">Gender:</dt>
       <dd class="dib ml0 gray">{Gender}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">PhoneNumber:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">PhoneNumber:</dt>
       <dd class="dib ml0 gray">{PhoneNumber}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">PaymentMethod:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">PaymentMethod:</dt>
       <dd class="dib ml0 gray">{PaymentMethod}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">Email:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">Email:</dt>
       <dd class="dib ml0 gray">{Email}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">URL:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">URL:</dt>
       <dd class="dib ml0 gray">{URL}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">MacAddress:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">MacAddress:</dt>
       <dd class="dib ml0 gray">{MacAddress}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">Longitude:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">Longitude:</dt>
       <dd class="dib ml0 gray">{Longitude}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">CreditCardNumber:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">CreditCardNumber:</dt>
       <dd class="dib ml0 gray">{CreditCardNumber}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b">Latitude:</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2">Latitude:</dt>
       <dd class="dib ml0 gray">{Latitude}</dd>
     </dl>
-    <dl class="f6 lh-title mv2">
-      <dt class="dib b"> DomainName</dt>
+    <dl class="f5 lh-title mv2">
+      <dt class="dib b mr-2"> DomainName</dt>
       <dd class="dib ml0 gray">{DomainName}</dd>
     </dl>
   </div>
